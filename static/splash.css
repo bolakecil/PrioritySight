@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:wght@200,300;400;500;600;700');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Poppins;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    overflow: hidden; /* Prevent scrolling */
+    /* position: relative; */
+    display: flex;
+    justify-content: center; /* Center children horizontally */
+    align-items: center; /* Center children vertically */
+}
+
+.logo-container {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust to the center of the element */
+    width: 100%; /* Full width to ensure flex properties are applied */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    font-size: 1.8rem;
+    font-weight: 600;
+    font-style: italic;
+}
+
+img {
+    width: 20%; /* Adjust width as needed */
+    max-width: 300px; /* Maximum width of the logo */
+}
+
+.ellipse1, .ellipse2, .ellipse3, .ellipse4 {
+    border-radius: 50%; /* Make the divs round */
+    position: absolute; /* Allows precise positioning */
+}
+
+.ellipse1 {
+    width: 20rem;
+    height: 20rem;
+    background-color: #274651;
+    top: -10rem; /* Half outside the screen (adjust as needed) */
+    left: -5rem; /* Half outside the screen (adjust as needed) */
+}
+
+.ellipse2 {
+    width: 40rem;
+    height: 40rem;
+    background-color: #186369;
+    bottom: -20rem; /* Half outside the screen (adjust as needed) */
+    right: -20rem; /* Half outside the screen (adjust as needed) */
+}
+
+.ellipse3 {
+    width: 12rem;
+    height: 12rem;
+    background-color: #1A9F89;
+    right: 8rem;
+    top: 5%;
+}
+
+.ellipse4 {
+    width: 20rem;
+    height: 20rem;
+    background-color: #098477;
+    left: 1rem;
+    top: 28rem;
+}
+/* Add styles for ellipse3 and ellipse4 similar to ellipse1 and ellipse2 */
