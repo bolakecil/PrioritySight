@@ -27,16 +27,63 @@
     <div class="sidebar">
         <div class="profile">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
-                <path d="M25 0C11.1895 0 0 11.1895 0 25C0 38.8105 11.1895 50 25 50C38.8105 50 50 38.8105 50 25C50 11.1895 38.8105 0 25 0ZM25 9.67742C29.8992 9.67742 33.871 13.6492 33.871 18.5484C33.871 23.4476 29.8992 27.4194 25 27.4194C20.1008 27.4194 16.129 23.4476 16.129 18.5484C16.129 13.6492 20.1008 9.67742 25 9.67742ZM25 44.3548C19.0827 44.3548 13.7802 41.6734 10.2319 37.4798C12.127 33.9113 15.8367 31.4516 20.1613 31.4516C20.4032 31.4516 20.6452 31.4919 20.877 31.5625C22.1875 31.9859 23.5585 32.2581 25 32.2581C26.4415 32.2581 27.8226 31.9859 29.123 31.5625C29.3548 31.4919 29.5968 31.4516 29.8387 31.4516C34.1633 31.4516 37.873 33.9113 39.7681 37.4798C36.2198 41.6734 30.9173 44.3548 25 44.3548Z" fill="white"/>
+                <path d="M25 0C11.1895 0 0 11.1895 0 25C0 38.8105 11.1895 50 25 50C38.8105 50 50 38.8105 50 25C50 11.1895 38.8105 0 25 0ZM25 9.67742C29.8992 9.67742 33.871 13.6492 33.871 18.5484C33.871 23.4476 29.8992 27.4194 25 27.4194C20.1008 27.4194 16.129 23.4476 16.129 18.5484C16.129 13.6492 20.1008 9.67742 25 9.67742ZM25 44.3548C19.0827 44.3548 13.7802 41.6734 10.2319 37.4798C12.127 33.9113 15.8367 31.4516 20.1613 31.4516C20.4032 31.4516 20.6452 31.4919 20.877 31.5625C22.1875 31.9859 23.5585 32.2581 25 32.2581C26.4415 32.2581 27.8226 31.9859 29.123 31.5625C29.3548 31.4919 29.5968 31.4516 29.8387 31.4516C34.1633 31.4516 37.873 33.9113 39.7681 37.4798C36.2198 41.6734 30.9173 44.3548 25 44.3548Z" fill="#02858F"/>
             </svg>
             <p>Pasien</p>
         </div>
         <p>Progress: </p>
         <p>DD/MM/YY</p>
-
     </div>
+    <form action="#" class="form">
+        <div class="progress-bar">
+            <div class="progress-step"></div>
+            <div class="progress-step"></div>
+            <div class="progress-step"></div>
+            <div class="progress-step"></div>
+            <div class="progress-step"></div>
+        </div>
+
+        <div class="personal-info">
+            <div class="name-info">
+                <label for="name">Nama</label>
+                <input type="text" name="name" id="name" placeholder="Masukkan Nama Anda" />
+            </div>
+            <div class="date-and-age">
+                <div class="date">
+                    <label for="date">Tanggal Lahir</label>
+                    <input type="date" name="date" id="date" />
+                </div>
+                <div class="age">
+                    <p>Umur</p>
+                    <p></p>
+                </div>
+            </div>
+            <div class="sex-info">
+                <label for="sex">Jenis Kelamin</label>
+                <div class="choice">
+                    <input type="radio" name="male" id="male" value="Laki-Laki"/>
+                    <label for="male">Laki-Laki</label>
+                    <input type="radio" name="female" id="female" value="Perempuan">
+                    <label for="female">Perempuan</label>
+                </div>
+            </div>
+        </div>
+        <div class="vital-signs">
+            <p>TEST</p>
+        </div>
+        <div class="risk-factors">
+
+        </div>
+        <div class="other-risk">
+
+        </div>
+        <svg class="next-button" xmlns="http://www.w3.org/2000/svg" width="232" height="120" viewBox="0 0 232 120" fill="none">
+            <path d="M6.99792 53.5C3.40807 53.5 0.497925 56.4101 0.497925 60C0.497925 63.5899 3.40807 66.5 6.99792 66.5V53.5ZM191.6 64.5962C194.138 62.0578 194.138 57.9422 191.6 55.4038L150.234 14.0381C147.695 11.4997 143.58 11.4997 141.041 14.0381C138.503 16.5765 138.503 20.692 141.041 23.2304L177.811 60L141.041 96.7696C138.503 99.308 138.503 103.424 141.041 105.962C143.58 108.5 147.695 108.5 150.234 105.962L191.6 64.5962ZM6.99792 66.5H187.003V53.5H6.99792V66.5Z" fill="#02858F"/>
+        </svg>          
+    </form>
+    <!-- tampilin prioritynya nanti pikirin -->
     
-    <script src="/static/patient.js"></script>
 </body>
+<script src="/static/patient.js" defer></script>
 </html>
 <!-- {{ url_for('static', filename='patient.js') }} -->

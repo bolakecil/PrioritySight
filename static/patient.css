@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:wght@200,300;400;500;600;700;800;900');
 
-* {
+*, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -69,4 +69,123 @@ svg{
 .sidebar.open {
     left: 0;
     animation: slideIn 0.5s forwards;
+}
+
+.progress-bar{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1% 0 1%;
+    counter-reset: step;
+}
+
+.progress-bar::before{
+    content:"";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 8px;
+    width: 98%;
+    background-color: #F2CA8D;
+}
+
+.progress-step{
+    position: relative;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-style: solid;
+    border-color: #F2CA8D;
+    border-width: 0.5rem;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+}
+
+.progress-step::before {
+    counter-increment: step;
+    content: counter(step);
+  }
+
+form{
+    padding: 2rem 1rem 0 1rem;
+    width: 80vw;
+    height: 75vh;
+    background-color: #CEEFEB;
+    margin: 3.5rem auto 0 auto;
+}
+
+.personal-info{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    gap: 1rem;
+    padding: 0 3.5rem 0 3.5rem;
+}
+
+.date-and-age{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+.name-info, .date, .age, .sex-info{
+    display: flex;
+    flex-direction: column;
+    font-size: 2.1rem;
+    font-weight: 700;
+    margin: 1rem 0 0 0;
+}
+
+.choice{
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.choice label{
+    margin: 0 3rem 0 1rem;
+}
+
+
+.next-button{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: 0 3rem 1rem 0;
+}
+
+input{
+    margin-top: 0.5rem;
+}
+
+#name{
+    height: 3.5rem;
+    border-radius: 7px;
+    padding-left: 0.5rem;
+    font-size: 1.3rem;
+    border-radius: 7px;
+    border: 2px solid #C4C4C4;
+    background-color: #F7F7F7;
+}
+
+#date{
+    height: 3.5rem;
+    width: 20vw;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    font-size: 1.3rem;
+    border-radius: 7px;
+    border: 2px solid #C4C4C4;
+    background-color: #F7F7F7;
+}
+
+#male, #female{
+    height: 1.2rem;
+    width: 1.2rem;
+}
+
+@media only screen and (max-height: 600px) { /*laptop*/
+    form{
+        height: 65vh;
+        margin: 3rem auto 0 auto;
+    }
 }
