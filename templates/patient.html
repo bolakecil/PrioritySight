@@ -36,50 +36,166 @@
     </div>
     <form action="#" class="form">
         <div class="progress-bar">
-            <div class="progress-step"></div>
-            <div class="progress-step"></div>
-            <div class="progress-step"></div>
-            <div class="progress-step"></div>
-            <div class="progress-step"></div>
+            <div class="progress" id="progress"></div>
+            <div class="progress-step progress-step-active" data-title="Informasi Pribadi"></div>
+            <div class="progress-step" data-title="Tanda Vital"></div>
+            <div class="progress-step" data-title="Faktor Risiko"></div>
+            <div class="progress-step" data-title="Faktor Lain"></div>
+            <div class="progress-step" data-title="Antrian Terdaftar"></div>
         </div>
 
-        <div class="personal-info">
-            <div class="name-info">
-                <label for="name">Nama</label>
-                <input type="text" name="name" id="name" placeholder="Masukkan Nama Anda" />
-            </div>
-            <div class="date-and-age">
-                <div class="date">
-                    <label for="date">Tanggal Lahir</label>
-                    <input type="date" name="date" id="date" />
+        <div class="form-step form-step-active" data-step="1">
+            <div class="personal-info">
+                <div class="name-info">
+                    <label for="name">Nama</label>
+                    <input type="text" name="name" id="name" placeholder="Masukkan Nama Anda" required/>
                 </div>
-                <div class="age">
-                    <p>Umur</p>
-                    <p></p>
+                <div class="date-and-age">
+                    <div class="date">
+                        <label for="date">Tanggal Lahir</label>
+                        <input type="date" name="date" id="date" required/>
+                    </div>
+                    <div class="age">
+                        <p>Umur</p>
+                        <p></p>
+                    </div>
+                </div>
+                <div class="sex-info">
+                    <label for="sex">Jenis Kelamin</label>
+                    <div class="choice">
+                        <input type="radio" name="sex" id="male" value="Laki-Laki" checked/>
+                        <label for="male">Laki-Laki</label>
+                        <input type="radio" name="sex" id="female" value="Perempuan">
+                        <label for="female">Perempuan</label>
+                    </div>
                 </div>
             </div>
-            <div class="sex-info">
-                <label for="sex">Jenis Kelamin</label>
-                <div class="choice">
-                    <input type="radio" name="male" id="male" value="Laki-Laki"/>
-                    <label for="male">Laki-Laki</label>
-                    <input type="radio" name="female" id="female" value="Perempuan">
-                    <label for="female">Perempuan</label>
-                </div>
-            </div>
+            <a><svg class="next-button" xmlns="http://www.w3.org/2000/svg" width="232" height="120" viewBox="0 0 232 120" fill="none">
+                <path d="M6.99792 53.5C3.40807 53.5 0.497925 56.4101 0.497925 60C0.497925 63.5899 3.40807 66.5 6.99792 66.5V53.5ZM191.6 64.5962C194.138 62.0578 194.138 57.9422 191.6 55.4038L150.234 14.0381C147.695 11.4997 143.58 11.4997 141.041 14.0381C138.503 16.5765 138.503 20.692 141.041 23.2304L177.811 60L141.041 96.7696C138.503 99.308 138.503 103.424 141.041 105.962C143.58 108.5 147.695 108.5 150.234 105.962L191.6 64.5962ZM6.99792 66.5H187.003V53.5H6.99792V66.5Z" fill="#02858F"/>
+            </svg></a>
         </div>
-        <div class="vital-signs">
-            <p>TEST</p>
+        <div class="form-step" data-step="2">
+            <div class="vital-signs">
+                <div class="first-row">
+                    <div class="temperature">
+                        <label for="temperature">Suhu Tubuh</label>
+                        <input type="text" name="temperature" id="temperature" placeholder="C" required/>
+                    </div>
+                    <div class="o2-saturation">
+                        <label for="o2-saturation">Saturasi Oksigen</label>
+                        <input type="text" name="o2-saturation" id="o2-saturation" placeholder="%" required/>
+                    </div>
+                </div>
+                <div class="second-row">
+                    <div class="heart-rate">
+                        <label for="heart-rate">Detak Jantung</label>
+                        <input type="text" name="heart-rate" id="heart-rate" placeholder="/menit" required/>
+                    </div>
+                    <div class="breath-rate">
+                        <label for="breath-rate">Laju Pernapasan</label>
+                        <input type="text" name="breath-rate" id="breath-rate" placeholder="/menit" required/>
+                    </div>
+                </div>
+                <div class="blood-pressure">
+                    <label for="blood-pressure">Tekanan Darah</label>
+                    <input type="text" name="blood-pressure" id="blood-pressure" placeholder="mmHg" required/>
+                </div>
+            </div>
+            <a><svg class="next-button" xmlns="http://www.w3.org/2000/svg" width="232" height="120" viewBox="0 0 232 120" fill="none">
+                <path d="M6.99792 53.5C3.40807 53.5 0.497925 56.4101 0.497925 60C0.497925 63.5899 3.40807 66.5 6.99792 66.5V53.5ZM191.6 64.5962C194.138 62.0578 194.138 57.9422 191.6 55.4038L150.234 14.0381C147.695 11.4997 143.58 11.4997 141.041 14.0381C138.503 16.5765 138.503 20.692 141.041 23.2304L177.811 60L141.041 96.7696C138.503 99.308 138.503 103.424 141.041 105.962C143.58 108.5 147.695 108.5 150.234 105.962L191.6 64.5962ZM6.99792 66.5H187.003V53.5H6.99792V66.5Z" fill="#02858F"/>
+            </svg></a>
         </div>
-        <div class="risk-factors">
+        <div class="form-step" data-step="3">
+            <div class="risk-factors">
+                <div class="breathing-difficulty">
+                    <label for="breathing-difficulty">Tingkat kesulitan bernafas pasien dari skala 0-1:</label>
+                    <input type="text" name="breathing-difficulty" id="breathing-difficulty" placeholder="0-1" required/>
+                </div>
+                <div class="category">
+                    <label for="category">Pasien termasuk dalam kategori:</label>
+                    <div class="columns">
+                        <div class="column-one">
+                            <div class="radio1">
+                                <input type="checkbox" name="60-years" id="60-years"/>
+                                <label for="60-years">Lebih dari 60 tahun</label>
+                            </div>
+                            <div class="radio2">
+                                <input type="checkbox" name="smoking" id="smoking"/>
+                                <label for="smoking">Merokok</label>
+                            </div>
+                            <div class="radio3">
+                                <input type="checkbox" name="obese" id="obese"/>
+                                <label for="obese">Obesitas</label>
+                            </div>
+                            <div class="radio4">
+                                <input type="checkbox" name="asthma" id="asthma"/>
+                                <label for="asthma">Memiliki asma</label>
+                            </div>
+                        </div>
+                        <div class="column-two">
+                            <div class="radio5">
+                                <input type="checkbox" name="pregnant" id="pregnant"/>
+                                <label for="pregnant">Sedang hamil</label>
+                            </div>
+                            <div class="radio6">
+                                <input type="checkbox" name="diabetic" id="diabetic"/>
+                                <label for="diabetic">Memiliki diabetes</label>
+                            </div>
+                            <div class="radio7">
+                                <input type="checkbox" name="heart-disease" id="heart-disease"/>
+                                <label for="heart-disease">Memiliki riwayat penyakit jantung</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <svg class="next-button" xmlns="http://www.w3.org/2000/svg" width="232" height="120" viewBox="0 0 232 120" fill="none">
+                <path d="M6.99792 53.5C3.40807 53.5 0.497925 56.4101 0.497925 60C0.497925 63.5899 3.40807 66.5 6.99792 66.5V53.5ZM191.6 64.5962C194.138 62.0578 194.138 57.9422 191.6 55.4038L150.234 14.0381C147.695 11.4997 143.58 11.4997 141.041 14.0381C138.503 16.5765 138.503 20.692 141.041 23.2304L177.811 60L141.041 96.7696C138.503 99.308 138.503 103.424 141.041 105.962C143.58 108.5 147.695 108.5 150.234 105.962L191.6 64.5962ZM6.99792 66.5H187.003V53.5H6.99792V66.5Z" fill="#02858F"/>
+            </svg>
+        </div>
+        <div class="form-step" data-step="4">
+            <div class="other-risk">
+                <div class="categoryy">
+                    <label for="categoryy">Pasien mengalami gejala:</label>
+                    <div class="columnss">
+                        <div class="column-one">
+                            <div class="radio1"> <!-- penamaan biarin sama-->
+                                <input type="checkbox" name="fever" id="fever"/>
+                                <label for="fever">Demam tinggi</label>
+                            </div>
+                            <div class="radio2">
+                                <input type="checkbox" name="diarrhea" id="diarrhea"/>
+                                <label for="diarrhea">Diare</label>
+                            </div>
+                            <div class="radio3">
+                                <input type="checkbox" name="cough" id="cough"/>
+                                <label for="cough">Batuk kering</label>
+                            </div>
+                            <div class="radio4">
+                                <input type="checkbox" name="weak" id="weak"/>
+                                <label for="weak">Lemas berlebih</label>
+                            </div>
+                        </div>
+                        <div class="column-two">
+                            <div class="radio5">
+                                <input type="checkbox" name="chest-pain" id="chest-pain"/>
+                                <label for="chest-pain">Nyeri di dada</label>
+                            </div>
+                            <div class="radio6">
+                                <input type="checkbox" name="dehydration" id="dehydration"/>
+                                <label for="dehydration">Dehidrasi</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <svg class="next-button" xmlns="http://www.w3.org/2000/svg" width="232" height="120" viewBox="0 0 232 120" fill="none">
+                <path d="M6.99792 53.5C3.40807 53.5 0.497925 56.4101 0.497925 60C0.497925 63.5899 3.40807 66.5 6.99792 66.5V53.5ZM191.6 64.5962C194.138 62.0578 194.138 57.9422 191.6 55.4038L150.234 14.0381C147.695 11.4997 143.58 11.4997 141.041 14.0381C138.503 16.5765 138.503 20.692 141.041 23.2304L177.811 60L141.041 96.7696C138.503 99.308 138.503 103.424 141.041 105.962C143.58 108.5 147.695 108.5 150.234 105.962L191.6 64.5962ZM6.99792 66.5H187.003V53.5H6.99792V66.5Z" fill="#02858F"/>
+            </svg>
+        </div>
+        <div class="form-step" data-step="5">
 
         </div>
-        <div class="other-risk">
-
-        </div>
-        <svg class="next-button" xmlns="http://www.w3.org/2000/svg" width="232" height="120" viewBox="0 0 232 120" fill="none">
-            <path d="M6.99792 53.5C3.40807 53.5 0.497925 56.4101 0.497925 60C0.497925 63.5899 3.40807 66.5 6.99792 66.5V53.5ZM191.6 64.5962C194.138 62.0578 194.138 57.9422 191.6 55.4038L150.234 14.0381C147.695 11.4997 143.58 11.4997 141.041 14.0381C138.503 16.5765 138.503 20.692 141.041 23.2304L177.811 60L141.041 96.7696C138.503 99.308 138.503 103.424 141.041 105.962C143.58 108.5 147.695 108.5 150.234 105.962L191.6 64.5962ZM6.99792 66.5H187.003V53.5H6.99792V66.5Z" fill="#02858F"/>
-        </svg>          
     </form>
     <!-- tampilin prioritynya nanti pikirin -->
     

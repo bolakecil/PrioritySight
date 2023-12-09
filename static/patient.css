@@ -80,6 +80,18 @@ svg{
     counter-reset: step;
 }
 
+.progress{
+    content:"";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 8px;
+    width: 0%;
+    background-color: #02858F;
+    z-index: 2;
+    transition: 0.3s;
+}
+
 .progress-bar::before{
     content:"";
     position: absolute;
@@ -88,7 +100,9 @@ svg{
     height: 8px;
     width: 98%;
     background-color: #F2CA8D;
+    z-index: 1;
 }
+
 
 .progress-step{
     position: relative;
@@ -99,22 +113,94 @@ svg{
     border-width: 0.5rem;
     border-radius: 50%;
     background-color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1rem;
+    z-index: 3;
+}
+
+.progress-step-active{
+    border-color: #02858F;
 }
 
 .progress-step::before {
     counter-increment: step;
-    content: counter(step);
-  }
+    /* content: counter(step); */
+}
+
+.progress-step::after{
+    content: attr(data-title);
+    position: absolute;
+    top: -2.3rem;
+    white-space: nowrap;
+}
+
+.form-step {
+    display: none;
+    /* transform-origin: top; */
+}
+
+.form-step-active {
+    display: flex;
+}
+
+@keyframes animate {
+    from {
+      transform: scale(1, 0);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1, 1);
+      opacity: 1;
+    }
+}
+
+input[type=radio]{
+    outline-color: #02858F;
+}
 
 form{
     padding: 2rem 1rem 0 1rem;
     width: 80vw;
     height: 75vh;
-    background-color: #CEEFEB;
+    border: 2px solid #CEEFEB;
     margin: 3.5rem auto 0 auto;
 }
 
-.personal-info{
+.other-risk{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    gap: 3rem;
+    padding: 0 3.5rem 0 3.5rem;
+}
+
+.columnss{
+    display: flex;
+    flex-direction: row;
+    gap: 12rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.vital-signs{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    gap: 1rem;
+    padding: 0 3.5rem 0 3.5rem;
+}
+
+.risk-factors{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    gap: 3rem;
+    padding: 0 3.5rem 0 3.5rem;
+}
+
+.personal-info{ 
     display: flex;
     flex-direction: column;
     margin-top: 2rem;
@@ -136,7 +222,74 @@ form{
     margin: 1rem 0 0 0;
 }
 
+.temperature, .o2-saturation, .heart-rate, .breath-rate{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1rem;
+}
+
+.blood-pressure{
+    font-size: 1.7rem;
+    font-weight: 700;
+    margin: 1rem 0 0 0;
+}
+
+.category, .breathing-difficulty{
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.breathing-difficulty{
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.first-row, .second-row{
+    display: flex;
+    justify-content: space-between;
+    gap: 2.5rem;
+    align-items: center;
+    font-size: 1.7rem;
+    font-weight: 700;
+    margin: 2rem 0 2rem 0;
+}
+
+.column-one{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.column-two{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.columns{
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
+    justify-content: space-between;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.categoryy{
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.category, .categoryy{
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
 .choice{
+    margin-top: 0.3rem;
     font-size: 1.5rem;
     font-weight: 500;
 }
@@ -145,16 +298,11 @@ form{
     margin: 0 3rem 0 1rem;
 }
 
-
 .next-button{
     position: absolute;
     right: 0;
     bottom: 0;
     margin: 0 3rem 1rem 0;
-}
-
-input{
-    margin-top: 0.5rem;
 }
 
 #name{
@@ -165,6 +313,27 @@ input{
     border-radius: 7px;
     border: 2px solid #C4C4C4;
     background-color: #F7F7F7;
+    margin-top: 0.3rem;
+}
+
+#name:focus{
+    border: 2px solid #02858F;
+    outline: none;
+}
+
+#breathing-difficulty{
+    height: 3.2rem;
+    width: 8vw;
+    padding-left: 0.5rem;
+    font-size: 1.5rem;
+    border-radius: 7px;
+    border: 2px solid #C4C4C4;
+    background-color: #F7F7F7;
+}
+
+#breathing-difficulty:focus{
+    border: 2px solid #02858F;
+    outline: none;
 }
 
 #date{
@@ -172,15 +341,41 @@ input{
     width: 20vw;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
+    margin-top: 0.3rem;
     font-size: 1.3rem;
     border-radius: 7px;
     border: 2px solid #C4C4C4;
     background-color: #F7F7F7;
 }
 
+#date:focus{
+    border: 2px solid #02858F;
+    outline: none;
+}
+
+#temperature, #o2-saturation, #heart-rate, #breath-rate, #blood-pressure{
+    height: 3.2rem;
+    width: 10vw;
+    padding-left: 0.5rem;
+    font-size: 1.2rem;
+    border-radius: 7px;
+    border: 2px solid #C4C4C4;
+    background-color: #F7F7F7;
+}
+
+#temperature:focus, #o2-saturation:focus, #heart-rate:focus, #breath-rate:focus, #blood-pressure:focus{
+    border: 2px solid #02858F;
+    outline: none;
+}
+
 #male, #female{
     height: 1.2rem;
     width: 1.2rem;
+}
+
+#male:focus, #female:focus{
+    border: 2px solid #02858F;
+    outline: none;
 }
 
 @media only screen and (max-height: 600px) { /*laptop*/
