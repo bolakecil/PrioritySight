@@ -63,22 +63,25 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function updateProgressbar() {
-      progressSteps.forEach((progressStep, idx) => {
-          if (idx <= formStepsNum) {
-              progressStep.classList.add("progress-step-active");
-          } else {
-              progressStep.classList.remove("progress-step-active");
-          }
-      });
+    progressSteps.forEach((progressStep, idx) => {
+        if (idx <= formStepsNum) {
+            progressStep.classList.add("progress-step-active");
+        } else {
+            progressStep.classList.remove("progress-step-active");
+        }
+    });
 
-      const progressActive = document.querySelectorAll(".progress-step-active");
-      progress.style.width =
-          ((progressActive.length - 1) / (progressSteps.length - 1)) * 100 + "%";
+    const progressActive = document.querySelectorAll(".progress-step-active");
 
-      // Update progress text
-      const progressPercentage = ((formStepsNum + 1) / formSteps.length) * 100;
-      progressText.textContent = `Progress: ${progressPercentage.toFixed(0)}%`;
-  }
+    // Calculate progress percentage and ensure it does not exceed 100%
+    let progressPercentage = ((progressActive.length - 1) / (progressSteps.length - 1)) * 100;
+    progressPercentage = Math.min(progressPercentage, 100); // Ensures progress does not exceed 100%
+    progress.style.width = progressPercentage + "%";
+
+    // Update progress text
+    progressText.textContent = `Progress: ${progressPercentage.toFixed(0)}%`;
+}
+
 
   function getCurrentFormattedDate() {
       const today = new Date();
@@ -90,18 +93,12 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function showResultSection() {
-    const resultSection = document.querySelector('.result');
+    const resultSection = document.querySelector('.queue-result');
     if (resultSection) {
         resultSection.style.display = 'flex'; // Show the result section
     }
 }
 
-function showResetButton() {
-    const resetButton = document.querySelector('.reset-section');
-    if (resetButton) {
-        resetButton.style.display = 'flex'; // Show the result section
-    }
-}
 
 function hideFormSection(){
     const formSection = document.querySelector('.form');
@@ -132,7 +129,6 @@ function submitForm() {
         document.querySelector('.result').innerHTML = html; // Adjust this selector as needed
         hideFormSection();
         showResultSection();
-        showResetButton();
         // Optionally, handle any additional logic after form submission
     })
     .catch(error => console.error('Error:', error));
