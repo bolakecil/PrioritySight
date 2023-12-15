@@ -31,29 +31,28 @@
             </svg>
             <p>Pasien</p>
         </div>
-        <p>Progress: </p>
-        <p>DD/MM/YY</p>
+        <p class="current-date">DD/MM/YY</p>
+        <p></p>
     </div>
-    <form action="#" class="form">
+    <form action="/process" class="form" method="post" novalidate>
         <div class="progress-bar">
             <div class="progress" id="progress"></div>
             <div class="progress-step progress-step-active" data-title="Informasi Pribadi"></div>
             <div class="progress-step" data-title="Tanda Vital"></div>
             <div class="progress-step" data-title="Faktor Risiko"></div>
             <div class="progress-step" data-title="Faktor Lain"></div>
-            <div class="progress-step" data-title="Antrian Terdaftar"></div>
         </div>
 
         <div class="form-step form-step-active" data-step="1">
             <div class="personal-info">
                 <div class="name-info">
                     <label for="name">Nama</label>
-                    <input type="text" name="name" id="name" placeholder="Masukkan Nama Anda" required/>
+                    <input type="text" name="name" id="name" placeholder="Masukkan Nama Anda"/>
                 </div>
                 <div class="date-and-age">
                     <div class="date">
                         <label for="date">Tanggal Lahir</label>
-                        <input type="date" name="date" id="date" required/>
+                        <input type="date" name="date" id="date"/>
                     </div>
                     <div class="age">
                         <p>Umur</p>
@@ -61,7 +60,7 @@
                     </div>
                 </div>
                 <div class="sex-info">
-                    <label for="sex">Jenis Kelamin</label>
+                    <label>Jenis Kelamin</label>
                     <div class="choice">
                         <input type="radio" name="sex" id="male" value="Laki-Laki" checked/>
                         <label for="male">Laki-Laki</label>
@@ -79,26 +78,32 @@
                 <div class="first-row">
                     <div class="temperature">
                         <label for="temperature">Suhu Tubuh</label>
-                        <input type="text" name="temperature" id="temperature" placeholder="C" required/>
+                        <input type="number" name="temperature" id="temperature" placeholder="C"/>
                     </div>
                     <div class="o2-saturation">
                         <label for="o2-saturation">Saturasi Oksigen</label>
-                        <input type="text" name="o2-saturation" id="o2-saturation" placeholder="%" required/>
+                        <input type="number" name="o2-saturation" id="o2-saturation" placeholder="%"/>
                     </div>
                 </div>
                 <div class="second-row">
                     <div class="heart-rate">
                         <label for="heart-rate">Detak Jantung</label>
-                        <input type="text" name="heart-rate" id="heart-rate" placeholder="/menit" required/>
+                        <input type="number" name="heart-rate" id="heart-rate" placeholder="/menit"/>
                     </div>
                     <div class="breath-rate">
                         <label for="breath-rate">Laju Pernapasan</label>
-                        <input type="text" name="breath-rate" id="breath-rate" placeholder="/menit" required/>
+                        <input type="number" name="breath-rate" id="breath-rate" placeholder="/menit"/>
                     </div>
                 </div>
-                <div class="blood-pressure">
-                    <label for="blood-pressure">Tekanan Darah</label>
-                    <input type="text" name="blood-pressure" id="blood-pressure" placeholder="mmHg" required/>
+                <div class="third-row">
+                    <div class="blood-pressure">
+                        <label for="blood-pressure">Tekanan Darah</label>
+                        <input type="number" name="blood-pressure" id="blood-pressure" placeholder="mmHg"/>
+                    </div>
+                    <div class="avpu-level">
+                        <label for="avpu-level">AVPU Level</label>
+                        <input type="text" name="avpu-level" id="avpu-level" placeholder="U/V/P/A"/>
+                    </div>
                 </div>
             </div>
             <a><svg class="next-button" xmlns="http://www.w3.org/2000/svg" width="232" height="120" viewBox="0 0 232 120" fill="none">
@@ -109,10 +114,10 @@
             <div class="risk-factors">
                 <div class="breathing-difficulty">
                     <label for="breathing-difficulty">Tingkat kesulitan bernafas pasien dari skala 0-1:</label>
-                    <input type="text" name="breathing-difficulty" id="breathing-difficulty" placeholder="0-1" required/>
+                    <input type="number" name="breathing-difficulty" id="breathing-difficulty" placeholder="0-1"/>
                 </div>
                 <div class="category">
-                    <label for="category">Pasien termasuk dalam kategori:</label>
+                    <label>Pasien termasuk dalam kategori:</label>
                     <div class="columns">
                         <div class="column-one">
                             <div class="radio1">
@@ -156,7 +161,7 @@
         <div class="form-step" data-step="4">
             <div class="other-risk">
                 <div class="categoryy">
-                    <label for="categoryy">Pasien mengalami gejala:</label>
+                    <label>Pasien mengalami gejala:</label>
                     <div class="columnss">
                         <div class="column-one">
                             <div class="radio1"> <!-- penamaan biarin sama-->
@@ -189,17 +194,23 @@
                     </div>
                 </div>
             </div>
-            <svg class="next-button" xmlns="http://www.w3.org/2000/svg" width="232" height="120" viewBox="0 0 232 120" fill="none">
-                <path d="M6.99792 53.5C3.40807 53.5 0.497925 56.4101 0.497925 60C0.497925 63.5899 3.40807 66.5 6.99792 66.5V53.5ZM191.6 64.5962C194.138 62.0578 194.138 57.9422 191.6 55.4038L150.234 14.0381C147.695 11.4997 143.58 11.4997 141.041 14.0381C138.503 16.5765 138.503 20.692 141.041 23.2304L177.811 60L141.041 96.7696C138.503 99.308 138.503 103.424 141.041 105.962C143.58 108.5 147.695 108.5 150.234 105.962L191.6 64.5962ZM6.99792 66.5H187.003V53.5H6.99792V66.5Z" fill="#02858F"/>
-            </svg>
-        </div>
-        <div class="form-step" data-step="5">
-
+            <button type="submit" >
+                <svg class="next-button" xmlns="http://www.w3.org/2000/svg" width="232" height="120" viewBox="0 0 232 120" fill="none">
+                    <path d="M6.99792 53.5C3.40807 53.5 0.497925 56.4101 0.497925 60C0.497925 63.5899 3.40807 66.5 6.99792 66.5V53.5ZM191.6 64.5962C194.138 62.0578 194.138 57.9422 191.6 55.4038L150.234 14.0381C147.695 11.4997 143.58 11.4997 141.041 14.0381C138.503 16.5765 138.503 20.692 141.041 23.2304L177.811 60L141.041 96.7696C138.503 99.308 138.503 103.424 141.041 105.962C143.58 108.5 147.695 108.5 150.234 105.962L191.6 64.5962ZM6.99792 66.5H187.003V53.5H6.99792V66.5Z" fill="#02858F"/>
+                </svg>
+            </button>
         </div>
     </form>
+    <div class="result">
+
+    </div>
+    <button type="reset" class="reset-section">
+        <div class="reset-button">
+            <p>Reset</p>
+        </div>
+    </button>
     <!-- tampilin prioritynya nanti pikirin -->
     
 </body>
 <script src="/static/patient.js" defer></script>
 </html>
-<!-- {{ url_for('static', filename='patient.js') }} -->

@@ -1,0 +1,13 @@
+
+    <div class="enqueued">
+        {% if priority == 'low' %}
+            <img src="/static/lowpriority.png">
+            <p>Pasien terdaftar dengan prioritas Rendah</p>
+        {% elif priority == 'medium' %}
+            <img src="/static/mediumpriority.png">
+            <p>Pasien terdaftar dengan prioritas Sedang</p>
+        {% elif priority == 'high' %}
+            <img src="/static/highpriority.png">
+            <p>Pasien terdaftar dengan prioritas Tinggi</p>
+        {% endif %}
+    </div>

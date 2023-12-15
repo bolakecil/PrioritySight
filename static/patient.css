@@ -69,6 +69,7 @@ svg{
 .sidebar.open {
     left: 0;
     animation: slideIn 0.5s forwards;
+    z-index: 5;
 }
 
 .progress-bar{
@@ -90,6 +91,7 @@ svg{
     background-color: #02858F;
     z-index: 2;
     transition: 0.3s;
+    max-width: 98%;
 }
 
 .progress-bar::before{
@@ -156,6 +158,12 @@ svg{
     }
 }
 
+button{
+    background: none;
+    padding: 0;
+    border: none;
+}
+
 input[type=radio]{
     outline-color: #02858F;
 }
@@ -208,6 +216,45 @@ form{
     padding: 0 3.5rem 0 3.5rem;
 }
 
+.result{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.enqueued{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.enqueued img{
+    width: 50%;
+}
+
+.reset-section{
+    display: none;
+}
+
+.reset-button{
+    border: 2px solid #02858F;
+    width: 8rem;
+    height: 2.5rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #02858F;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
 .date-and-age{
     display: flex;
     flex-direction: row;
@@ -222,18 +269,13 @@ form{
     margin: 1rem 0 0 0;
 }
 
-.temperature, .o2-saturation, .heart-rate, .breath-rate{
+.temperature, .o2-saturation, .heart-rate, .breath-rate, .blood-pressure, .avpu-level{
     display: flex;
     justify-content: flex-end;
     align-items: center;
     gap: 1rem;
 }
 
-.blood-pressure{
-    font-size: 1.7rem;
-    font-weight: 700;
-    margin: 1rem 0 0 0;
-}
 
 .category, .breathing-difficulty{
     font-size: 1.6rem;
@@ -246,7 +288,7 @@ form{
     align-items: center;
 }
 
-.first-row, .second-row{
+.first-row, .second-row, .third-row{
     display: flex;
     justify-content: space-between;
     gap: 2.5rem;
@@ -305,6 +347,10 @@ form{
     margin: 0 3rem 1rem 0;
 }
 
+.reset-button{
+    border: 2px solid #02858F;
+}
+
 #name{
     height: 3.5rem;
     border-radius: 7px;
@@ -353,7 +399,7 @@ form{
     outline: none;
 }
 
-#temperature, #o2-saturation, #heart-rate, #breath-rate, #blood-pressure{
+#temperature, #o2-saturation, #heart-rate, #breath-rate, #blood-pressure, #avpu-level{
     height: 3.2rem;
     width: 10vw;
     padding-left: 0.5rem;
@@ -363,7 +409,7 @@ form{
     background-color: #F7F7F7;
 }
 
-#temperature:focus, #o2-saturation:focus, #heart-rate:focus, #breath-rate:focus, #blood-pressure:focus{
+#temperature:focus, #o2-saturation:focus, #heart-rate:focus, #breath-rate:focus, #blood-pressure:focus, #avpu-level:focus{
     border: 2px solid #02858F;
     outline: none;
 }
