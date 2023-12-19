@@ -1,7 +1,3 @@
-To create a README for your GitHub repository "PrioritySight," I'll provide a structured outline and content that you can use. This README will include an introduction to the project, its purpose, the technology stack used, and its application. Here's a suggested format:
-
----
-
 # PrioritySight
 
 ## Introduction
