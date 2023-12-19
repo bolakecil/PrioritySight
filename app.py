@@ -70,7 +70,6 @@ def calculate_news_score(temperature, oxygen_saturation, heart_rate, respiratory
     return news_score
 
 
-# Importing necessary libraries
 
 # Defining the universe of discourse for each variable
 sv_universe = np.arange(0, 1.1, 0.1) # Assuming a normalized score from 0 to 1
@@ -106,10 +105,7 @@ severity['moderate'] = fuzz.trimf(severity_universe, [0.2, 0.5, 0.8])
 severity['severe'] = fuzz.trimf(severity_universe, [0.7, 0.7, 1])
 
 
-# Repeat the above step for the rest of the variables...
 
-# Define the fuzzy rules as per the paper's guidelines
-# Note: The following rules are placeholders and should be replaced with actual rules from the paper
 rule1 = ctrl.Rule(antecedent=(sv['low'] & bd['minimal_or_absent'] & rf['minimal_or_absent'] & rs['minimal_or_absent']),
                   consequent=severity['mild'])
 rule2 = ctrl.Rule(antecedent=(sv['low'] & bd['minimal_or_absent'] & rf['minimal_or_absent'] & rs['meaningful']),

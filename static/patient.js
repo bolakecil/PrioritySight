@@ -129,7 +129,6 @@ function submitForm() {
         document.querySelector('.result').innerHTML = html; // Adjust this selector as needed
         hideFormSection();
         showResultSection();
-        // Optionally, handle any additional logic after form submission
     })
     .catch(error => console.error('Error:', error));
 }
@@ -137,21 +136,18 @@ function submitForm() {
 const resetButton = document.querySelector('.reset-section');
     if (resetButton) {
         resetButton.addEventListener('click', (event) => {
-            // Logic to reset the form or perform other actions
             event.preventDefault();
             console.log('Reset button clicked');
-            // Reset form logic here
             resetForm();
         });
     }
 
     function resetForm() {
-        // Your reset logic here
         document.querySelector('form').reset();
         console.log('Form reset');
     
         // Redirect to patient.html to restart the form
-        window.location.href = '/patient'; // Adjust the URL as needed based on your folder structure
+        window.location.href = '/patient';
     }
     
 
