@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:wght@200,300;400;500;600;700;800;900');
+@import url('https://fonts.googleapis.com/css?family=Nunito:wght@200,300;400;500;600;700;800;900');
 
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: Poppins;
+    font-family: Nunito;
 }
 
 .header{
@@ -120,6 +120,7 @@ svg{
     align-items: center;
     font-size: 1.1rem;
     z-index: 3;
+    font-weight: 600;
 }
 
 .progress-step-active{
