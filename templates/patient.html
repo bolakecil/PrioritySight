@@ -46,17 +46,26 @@
         <div class="form-step form-step-active" data-step="1">
             <div class="personal-info">
                 <div class="name-info">
+                    <div class="header-icon">
+                        <img src="/static/name.png">
                     <label for="name">Nama</label>
+                    </div>
                     <input type="text" name="name" id="name" placeholder="Masukkan Nama Anda"/>
                 </div>
                 <div class="date-and-age">
                     <div class="date">
-                        <label for="date">Tanggal Lahir</label>
+                        <div class="header-icon">
+                            <img src="/static/date.png">
+                            <label for="date">Tanggal Lahir</label>
+                        </div>
                         <input type="date" name="date" id="date"/>
                     </div>
                 </div>
                 <div class="sex-info">
-                    <label>Jenis Kelamin</label>
+                    <div class="header-icon">
+                        <img src="/static/gender.png">
+                        <label>Jenis Kelamin</label>
+                    </div>
                     <div class="choice">
                         <input type="radio" name="sex" id="male" value="Laki-Laki" checked/>
                         <label for="male">Laki-Laki</label>
@@ -73,31 +82,49 @@
             <div class="vital-signs">
                 <div class="first-row">
                     <div class="temperature">
-                        <label for="temperature">Suhu Tubuh</label>
+                        <div class="header-icon">
+                            <img src="/static/temperature.png">
+                            <label for="temperature">Suhu Tubuh</label>
+                        </div>
                         <input type="number" name="temperature" id="temperature" placeholder="C"/>
                     </div>
                     <div class="o2-saturation">
-                        <label for="o2-saturation">Saturasi Oksigen</label>
+                        <div class="header-icon">
+                            <img src="/static/o2saturation.png">
+                            <label for="o2-saturation">Saturasi Oksigen</label>
+                        </div>
                         <input type="number" name="o2-saturation" id="o2-saturation" placeholder="%"/>
                     </div>
                 </div>
                 <div class="second-row">
                     <div class="heart-rate">
-                        <label for="heart-rate">Detak Jantung</label>
+                        <div class="header-icon">
+                            <img src="/static/heartrate.png">
+                            <label for="heart-rate">Detak Jantung</label>
+                        </div>
                         <input type="number" name="heart-rate" id="heart-rate" placeholder="/menit"/>
                     </div>
                     <div class="breath-rate">
-                        <label for="breath-rate">Laju Pernapasan</label>
+                        <div class="header-icon">
+                            <img src="/static/breathrate.png">
+                            <label for="breath-rate">Laju Pernapasan</label>
+                        </div>
                         <input type="number" name="breath-rate" id="breath-rate" placeholder="/menit"/>
                     </div>
                 </div>
                 <div class="third-row">
                     <div class="blood-pressure">
-                        <label for="blood-pressure">Tekanan Darah</label>
+                        <div class="header-icon">
+                            <img src="/static/bloodpressure.png">
+                            <label for="blood-pressure">Tekanan Darah</label>
+                        </div>
                         <input type="number" name="blood-pressure" id="blood-pressure" placeholder="mmHg"/>
                     </div>
                     <div class="avpu-level">
-                        <label for="avpu-level">AVPU Level</label>
+                        <div class="header-icon">
+                            <img src="/static/avpulevel.png">
+                            <label for="avpu-level">AVPU Level</label>
+                        </div>
                         <input type="text" name="avpu-level" id="avpu-level" placeholder="U/V/P/A"/>
                     </div>
                 </div>
@@ -109,11 +136,17 @@
         <div class="form-step" data-step="3">
             <div class="risk-factors">
                 <div class="breathing-difficulty">
-                    <label for="breathing-difficulty">Tingkat kesulitan bernafas pasien dari skala 0-1:</label>
+                    <div class="header-icon">
+                        <img src="/static/breathingdifficulty.png">
+                        <label for="breathing-difficulty">Tingkat kesulitan bernafas pasien dari skala 0-1:</label>
+                    </div>
                     <input type="number" name="breathing-difficulty" id="breathing-difficulty" placeholder="0-1"/>
                 </div>
                 <div class="category">
-                    <label>Pasien termasuk dalam kategori:</label>
+                    <div class="header-icon">
+                        <img src="/static/category.png">
+                        <label>Pasien termasuk dalam kategori:</label>
+                    </div>
                     <div class="columns">
                         <div class="column-one">
                             <div class="radio1">
@@ -157,7 +190,10 @@
         <div class="form-step" data-step="4">
             <div class="other-risk">
                 <div class="categoryy">
-                    <label>Pasien mengalami gejala:</label>
+                    <div class="header-icon">
+                        <img src="/static/symptoms.png">
+                        <label>Pasien mengalami gejala:</label>
+                    </div>
                     <div class="columnss">
                         <div class="column-one">
                             <div class="radio1"> <!-- penamaan biarin sama-->
